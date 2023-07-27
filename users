@@ -1,0 +1,56 @@
+\du
+\q
+exit
+\q
+\du
+\q
+\?
+\h
+CREATE DATABASE test_db
+\c test_db
+\q
+CREATE DATABASE test_db;
+\c test_db
+\?
+\dt test_db\
+\dt
+CREATE DATABASE test_db;
+SELECT * FROM famous_people;
+CREATE TABLE famous_people (
+  id SERIAL PRIMARY KEY,
+  first_name VARCHAR(50),
+  last_name VARCHAR(50),
+  birthdate DATE
+);
+INSERT INTO famous_people (first_name, last_name, birthdate)
+  VALUES ('Abraham', 'Lincoln', '1809-02-12');
+INSERT INTO famous_people (first_name, last_name, birthdate)
+  VALUES ('Mahatma', 'Gandhi', '1869-10-02');
+INSERT INTO famous_people (first_name, last_name, birthdate)
+  VALUES ('Paul', 'Rudd', '1969-04-06');
+INSERT INTO famous_people (first_name, last_name, birthdate)
+  VALUES ('Paul', 'Giamatti', '1967-06-06');
+\dt
+SELECT * FROM famous_people;
+SELECT * FROM famous_people
+WHERE birthdate >= '1920-01-01'
+;
+SELECT * FROM famous_people
+WHERE birthdate < '1920-01-01';
+SELECT * FROM famous_people WHERE first_name LIKE 'Paul%'
+;
+SELECT * FROM famous_people WHERE first_name = 'Paul';
+SELECT COUNT(*) FROM famous_people;
+/q
+\q
+\dt
+\q
+\dt
+\q
+\c bootcampx
+\i 3_queries_group-by/1_total_num_assgn_per day_bootcamp.sql
+\i 3_queries_group-by/1_total_num_assgn_per day_bootcamp.sql
+\q
+\c test_db2
+\dt
+\s users
